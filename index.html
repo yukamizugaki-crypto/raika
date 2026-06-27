@@ -1,0 +1,1627 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>来入華 | 中華料理 坂戸市 坂戸駅北口徒歩1分</title>
+    <meta name="description" content="埼玉県坂戸市の中華料理店「来入華」。地元に長年愛され続けた味。いつ行っても同じ味を。飲み放題コースあり。坂戸駅北口から徒歩1分。">
+    <meta name="keywords" content="来入華,中華料理,坂戸市,坂戸駅,埼玉,飲み放題,宴会,ローストビーフ,小籠包,エビチリ">
+    <meta property="og:title" content="来入華 | 中華料理 坂戸市">
+    <meta property="og:description" content="地元に長年愛され続けた中華料理店。いつ行っても同じ味を。坂戸駅北口から徒歩1分。">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;700;900&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=ZCOOL+XiaoWei&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.png" type="image/png">
+    <style>
+        :root {
+            --primary-red: #C41E2B;
+            --primary-dark: #8B0000;
+            --accent-green: #2A7A2A;
+            --accent-gold: #B8860B;
+            --text-main: #2A2A2A;
+            --text-light: #5A5A5A;
+            --bg-light: #FDFAF4;
+            --bg-warm: #F5EFE0;
+            --bg-dark: #1A0A0A;
+            --border-gold: rgba(184,134,11,0.3);
+            --font-serif: 'Noto Serif JP', serif;
+            --font-sans: 'Zen Kaku Gothic New', sans-serif;
+            --font-chinese: 'ZCOOL XiaoWei', 'Noto Serif JP', serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            color: var(--text-main);
+            background-color: var(--bg-light);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-serif);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ===== DECORATIVE CHINESE PATTERN ===== */
+        .chinese-corner {
+            display: inline-block;
+            width: 28px;
+            height: 28px;
+            border: 2.5px solid var(--accent-green);
+            position: relative;
+        }
+        .chinese-corner::before {
+            content: '';
+            position: absolute;
+            top: 3px; left: 3px; right: 3px; bottom: 3px;
+            border: 1.5px solid var(--accent-green);
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(253, 250, 244, 0.97);
+            box-shadow: 0 2px 15px rgba(196,30,43,0.08);
+            z-index: 1000;
+            padding: 12px 0;
+            transition: all 0.3s ease;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-text {
+            font-family: var(--font-chinese);
+            font-size: 30px;
+            color: var(--primary-red);
+            letter-spacing: 4px;
+            line-height: 1;
+            text-shadow: 1px 1px 0 rgba(139,0,0,0.2);
+        }
+
+        .logo-sub {
+            font-size: 11px;
+            color: var(--text-light);
+            font-family: var(--font-sans);
+            letter-spacing: 1px;
+            display: block;
+            margin-top: 2px;
+        }
+
+        /* Header decorative border from sign */
+        .logo-deco {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .logo-deco-line {
+            width: 3px;
+            height: 36px;
+            background: linear-gradient(to bottom, var(--accent-green), transparent);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 28px;
+            align-items: center;
+        }
+
+        nav a {
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 1.5px;
+            color: var(--text-main);
+        }
+
+        nav a:hover {
+            color: var(--primary-red);
+        }
+
+        .nav-reserve {
+            background-color: var(--primary-red);
+            color: white !important;
+            padding: 9px 18px;
+            border-radius: 3px;
+            letter-spacing: 1px;
+        }
+
+        .nav-reserve:hover {
+            background-color: var(--primary-dark) !important;
+            color: white !important;
+        }
+
+        /* Mobile Controls */
+        .mobile-controls {
+            display: none;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .menu-toggle {
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+            padding: 4px;
+        }
+
+        .menu-toggle span {
+            width: 24px;
+            height: 2px;
+            background-color: var(--text-main);
+            transition: 0.3s;
+            display: block;
+        }
+
+        .nav-icon svg {
+            display: block;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            height: 100vh;
+            min-height: 600px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background-color: #1A0A0A;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-size: cover;
+            background-position: center;
+            z-index: 0;
+            opacity: 0;
+            animation: heroSlide 8s linear infinite;
+        }
+
+        .hero-bg.slide-1 {
+            background-image: url('img/店内１.png');
+            animation-delay: 0s;
+        }
+        .hero-bg.slide-2 {
+            background-image: url('img/店内２.png');
+            animation-delay: 4s;
+        }
+
+        @keyframes heroSlide {
+            0% { opacity: 0; transform: scale(1.0); }
+            10% { opacity: 1; transform: scale(1.03); }
+            50% { opacity: 1; transform: scale(1.08); }
+            60% { opacity: 0; transform: scale(1.1); }
+            100% { opacity: 0; transform: scale(1.0); }
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(to bottom, rgba(26,10,10,0.55) 0%, rgba(26,10,10,0.35) 50%, rgba(26,10,10,0.7) 100%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        /* Sign-style hero title */
+        .hero-sign {
+            background: rgba(255, 255, 255, 0.93);
+            padding: 40px 60px;
+            display: inline-block;
+            position: relative;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.3);
+        }
+
+        .hero-sign::before,
+        .hero-sign::after {
+            content: '';
+            position: absolute;
+            border: 2px solid var(--accent-green);
+        }
+        .hero-sign::before {
+            top: 8px; left: 8px; right: 8px; bottom: 8px;
+        }
+
+        /* 4 corner decorations like the sign */
+        .sign-corner {
+            position: absolute;
+            width: 22px;
+            height: 22px;
+            border: 2px solid var(--accent-green);
+        }
+        .sign-corner::before {
+            content: '';
+            position: absolute;
+            top: 3px; left: 3px; right: 3px; bottom: 3px;
+            border: 1px solid var(--accent-green);
+        }
+        .sign-corner.tl { top: 4px; left: 4px; }
+        .sign-corner.tr { top: 4px; right: 4px; }
+        .sign-corner.bl { bottom: 4px; left: 4px; }
+        .sign-corner.br { bottom: 4px; right: 4px; }
+
+        .hero-title {
+            font-family: var(--font-chinese);
+            font-size: 72px;
+            color: var(--primary-red);
+            letter-spacing: 16px;
+            text-indent: 16px;
+            line-height: 1;
+            margin-bottom: 12px;
+            text-shadow: 2px 2px 0 rgba(139,0,0,0.15);
+            animation: textReveal 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+        }
+
+        .hero-subtitle {
+            font-size: 14px;
+            font-family: var(--font-serif);
+            letter-spacing: 5px;
+            color: var(--text-light);
+            opacity: 0;
+            animation: textReveal 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) 0.5s forwards;
+        }
+
+        @keyframes textReveal {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero-scroll {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            color: rgba(255,255,255,0.7);
+            font-size: 11px;
+            letter-spacing: 2px;
+            animation: fadeIn 2s ease 1.5s forwards;
+            opacity: 0;
+        }
+
+        .hero-scroll::after {
+            content: '';
+            width: 1px;
+            height: 40px;
+            background: linear-gradient(to bottom, rgba(255,255,255,0.7), transparent);
+            animation: scrollLine 1.5s ease infinite;
+        }
+
+        @keyframes scrollLine {
+            0% { height: 0; opacity: 1; }
+            100% { height: 40px; opacity: 0; }
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        /* ===== SECTIONS ===== */
+        section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 30px;
+            color: var(--primary-red);
+            margin-bottom: 8px;
+            letter-spacing: 5px;
+            text-indent: 5px;
+        }
+
+        .section-title .section-en {
+            font-size: 11px;
+            color: var(--accent-gold);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            font-family: var(--font-serif);
+        }
+
+        /* Section title with sign-style decoration */
+        .section-title-deco {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 12px;
+        }
+
+        .deco-line {
+            flex: 1;
+            max-width: 80px;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--accent-green));
+        }
+        .deco-line.right {
+            background: linear-gradient(to left, transparent, var(--accent-green));
+        }
+
+        /* ===== CONCEPT ===== */
+        #concept {
+            background-color: var(--bg-light);
+        }
+
+        .concept-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .concept-image {
+            position: relative;
+            border-radius: 3px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+        }
+
+        .concept-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Sign-style frame overlay */
+        .concept-image::before {
+            content: '';
+            position: absolute;
+            inset: 10px;
+            border: 1px solid rgba(255,255,255,0.4);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .concept-text h3 {
+            font-size: 24px;
+            color: var(--primary-red);
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .concept-text p {
+            font-size: 15px;
+            color: var(--text-main);
+            margin-bottom: 18px;
+            line-height: 2;
+        }
+
+        .concept-message {
+            border-left: 3px solid var(--primary-red);
+            padding-left: 16px;
+            margin-top: 24px;
+        }
+
+        .concept-message p {
+            font-family: var(--font-serif);
+            font-size: 16px;
+            color: var(--primary-red);
+            margin-bottom: 8px;
+        }
+
+        /* ===== POPULAR MENU BAND ===== */
+        .popular-band {
+            background: var(--primary-red);
+            padding: 16px 0;
+            overflow: hidden;
+        }
+
+        .popular-band-inner {
+            display: flex;
+            gap: 50px;
+            animation: bandScroll 20s linear infinite;
+            white-space: nowrap;
+        }
+
+        .popular-band-item {
+            font-family: var(--font-serif);
+            color: rgba(255,255,255,0.9);
+            font-size: 13px;
+            letter-spacing: 3px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .popular-band-dot {
+            width: 4px;
+            height: 4px;
+            background: rgba(255,255,255,0.5);
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        @keyframes bandScroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* ===== MENU ===== */
+        #menu {
+            background-color: var(--bg-warm);
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .menu-item {
+            background: rgba(255,255,255,0.9);
+            border: 1px solid var(--border-gold);
+            border-radius: 3px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 40px rgba(196,30,43,0.1);
+        }
+
+        .menu-item.featured {
+            border-color: var(--primary-red);
+            border-width: 2px;
+        }
+
+        .menu-img-wrap {
+            position: relative;
+            height: 220px;
+            overflow: hidden;
+            background: #f0e8d8;
+        }
+
+        .menu-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .menu-item:hover .menu-img-wrap img {
+            transform: scale(1.05);
+        }
+
+        .menu-badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: var(--primary-red);
+            color: white;
+            font-size: 11px;
+            font-family: var(--font-serif);
+            letter-spacing: 2px;
+            padding: 4px 10px;
+            z-index: 1;
+        }
+
+        .menu-content {
+            padding: 20px 22px 24px;
+        }
+
+        .menu-content h3 {
+            font-size: 17px;
+            color: var(--primary-red);
+            margin-bottom: 8px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #eee;
+            letter-spacing: 1px;
+        }
+
+        .menu-content p {
+            font-size: 13px;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* ===== COURSE / NOMIHOUDAI ===== */
+        #course {
+            background-color: var(--bg-light);
+        }
+
+        .course-box {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border: 2px solid var(--primary-red);
+            padding: 50px 60px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(196,30,43,0.08);
+        }
+
+        .course-box::before {
+            content: '';
+            position: absolute;
+            inset: 6px;
+            border: 1px solid rgba(196,30,43,0.2);
+            pointer-events: none;
+        }
+
+        .course-corner {
+            position: absolute;
+            width: 18px;
+            height: 18px;
+            border: 2px solid var(--accent-green);
+        }
+        .course-corner::before {
+            content: '';
+            position: absolute;
+            top: 3px; left: 3px; right: 3px; bottom: 3px;
+            border: 1px solid var(--accent-green);
+        }
+        .course-corner.tl { top: 12px; left: 12px; }
+        .course-corner.tr { top: 12px; right: 12px; }
+        .course-corner.bl { bottom: 12px; left: 12px; }
+        .course-corner.br { bottom: 12px; right: 12px; }
+
+        .course-tag {
+            display: inline-block;
+            background: var(--primary-red);
+            color: white;
+            font-size: 13px;
+            font-family: var(--font-serif);
+            letter-spacing: 3px;
+            padding: 6px 20px;
+            margin-bottom: 24px;
+        }
+
+        .course-title {
+            font-size: 26px;
+            color: var(--primary-red);
+            margin-bottom: 16px;
+            letter-spacing: 3px;
+        }
+
+        .course-price {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: var(--text-main);
+            font-family: var(--font-serif);
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .course-price .price-item {
+            display: inline-block;
+        }
+
+        .course-price .price-val {
+            font-size: 36px;
+            color: var(--primary-red);
+            font-weight: 900;
+            margin: 0 2px;
+        }
+
+        .course-price .price-plus {
+            font-size: 22px;
+            color: var(--accent-gold);
+            margin: 0 16px;
+            font-weight: 500;
+        }
+
+        .course-divider {
+            width: 60px;
+            height: 1px;
+            background: var(--border-gold);
+            margin: 24px auto;
+        }
+
+        .course-details {
+            font-size: 14px;
+            color: var(--text-main);
+            line-height: 2.2;
+        }
+
+        .course-note {
+            margin-top: 20px;
+            font-size: 13px;
+            color: var(--text-light);
+            font-style: normal;
+            background: var(--bg-warm);
+            padding: 12px 20px;
+            border-left: 3px solid var(--accent-gold);
+            text-align: left;
+        }
+
+        /* ===== SPACE (Interior) ===== */
+        #space {
+            background-color: var(--bg-warm);
+        }
+
+        .space-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 28px;
+        }
+
+        .space-card {
+            background: rgba(255,255,255,0.9);
+            border: 1px solid var(--border-gold);
+            border-radius: 3px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .space-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 40px rgba(0,0,0,0.08);
+        }
+
+        .space-img {
+            height: 260px;
+            overflow: hidden;
+        }
+
+        .space-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .space-card:hover .space-img img {
+            transform: scale(1.04);
+        }
+
+        .space-content {
+            padding: 26px 28px;
+        }
+
+        .space-content h3 {
+            font-size: 18px;
+            color: var(--primary-red);
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .space-content p {
+            font-size: 14px;
+            color: var(--text-light);
+            line-height: 1.9;
+        }
+
+        /* ===== RESERVATION ===== */
+        .reservation-section {
+            background-color: #f5e8e8;
+            padding: 90px 0;
+        }
+
+        .reservation-box {
+            text-align: center;
+            background: white;
+            padding: 60px 40px;
+            border-radius: 3px;
+            box-shadow: 0 10px 40px rgba(196,30,43,0.06);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .reservation-box h2 {
+            font-size: 26px;
+            color: var(--primary-red);
+            margin-bottom: 16px;
+            letter-spacing: 3px;
+        }
+
+        .reservation-box p {
+            font-size: 14px;
+            color: var(--text-main);
+            margin-bottom: 36px;
+            line-height: 2;
+        }
+
+        .reservation-actions {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .res-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 260px;
+            padding: 22px;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+
+        .res-btn span {
+            font-size: 11px;
+            margin-bottom: 4px;
+            opacity: 0.85;
+            letter-spacing: 1px;
+        }
+
+        .res-btn strong {
+            font-size: 19px;
+            letter-spacing: 1px;
+            font-family: var(--font-serif);
+        }
+
+        .phone-btn {
+            background: white;
+            color: var(--primary-red);
+            border: 2px solid var(--primary-red);
+        }
+
+        .phone-btn:hover {
+            background: #fdf5f5;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(196,30,43,0.12);
+        }
+
+        .insta-btn {
+            background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+            color: white;
+            border: 2px solid transparent;
+        }
+
+        .insta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(253,29,29,0.3);
+            color: white;
+        }
+
+        /* ===== INFORMATION ===== */
+        #information {
+            background-color: var(--bg-light);
+        }
+
+        .info-container {
+            display: flex;
+            gap: 50px;
+            align-items: flex-start;
+        }
+
+        .info-details {
+            flex: 1;
+        }
+
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .info-table th, .info-table td {
+            padding: 18px 14px;
+            border-bottom: 1px solid #eee;
+            text-align: left;
+            font-size: 14px;
+            vertical-align: top;
+        }
+
+        .info-table th {
+            width: 32%;
+            font-weight: 600;
+            color: var(--primary-red);
+            font-family: var(--font-serif);
+            letter-spacing: 1px;
+        }
+
+        .info-table td {
+            color: var(--text-main);
+            line-height: 2;
+        }
+
+        .info-map {
+            flex: 1;
+            border-radius: 3px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            min-height: 420px;
+        }
+
+        .info-map iframe {
+            width: 100%;
+            height: 420px;
+            border: none;
+            display: block;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background-color: var(--bg-dark);
+            color: rgba(255,255,255,0.8);
+            padding: 60px 0 30px;
+            text-align: center;
+        }
+
+        .footer-logo-text {
+            font-family: var(--font-chinese);
+            font-size: 38px;
+            color: var(--primary-red);
+            letter-spacing: 8px;
+            display: block;
+            margin-bottom: 4px;
+            text-shadow: 0 0 20px rgba(196,30,43,0.4);
+        }
+
+        .footer-logo-sub {
+            font-size: 12px;
+            color: rgba(255,255,255,0.5);
+            letter-spacing: 3px;
+            margin-bottom: 30px;
+            display: block;
+            font-family: var(--font-serif);
+        }
+
+        .footer-sns {
+            margin-bottom: 30px;
+        }
+
+        .footer-sns a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: rgba(255,255,255,0.6);
+            font-size: 13px;
+            letter-spacing: 1px;
+            padding: 8px 20px;
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .footer-sns a:hover {
+            color: white;
+            border-color: rgba(255,255,255,0.4);
+            background: rgba(255,255,255,0.05);
+        }
+
+        .footer-info {
+            margin-bottom: 36px;
+            font-size: 13px;
+            color: rgba(255,255,255,0.5);
+            line-height: 2.2;
+            font-family: var(--font-sans);
+        }
+
+        .footer-divider {
+            width: 40px;
+            height: 1px;
+            background: rgba(255,255,255,0.15);
+            margin: 0 auto 30px;
+        }
+
+        .copyright {
+            font-size: 11px;
+            color: rgba(255,255,255,0.3);
+            border-top: 1px solid rgba(255,255,255,0.07);
+            padding-top: 24px;
+            letter-spacing: 1.5px;
+        }
+
+        /* ===== ANIMATIONS ===== */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .fade-left {
+            opacity: 0;
+            transform: translateX(-40px);
+            transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .fade-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .fade-right {
+            opacity: 0;
+            transform: translateX(40px);
+            transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .fade-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .delay-100 { transition-delay: 0.1s; }
+        .delay-200 { transition-delay: 0.2s; }
+        .delay-300 { transition-delay: 0.3s; }
+        .delay-400 { transition-delay: 0.4s; }
+        .delay-500 { transition-delay: 0.5s; }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 992px) {
+            .concept-grid {
+                grid-template-columns: 1fr;
+            }
+            .info-container {
+                flex-direction: column;
+            }
+            .info-map {
+                width: 100%;
+            }
+            .menu-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .space-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                position: fixed !important;
+                background-color: #FDFAF4 !important;
+                padding: 10px 0;
+            }
+
+            .mobile-controls {
+                display: flex;
+            }
+
+            nav {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: #FDFAF4;
+                box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+                display: none;
+                max-height: calc(100vh - 60px);
+                overflow-y: auto;
+            }
+
+            nav.active {
+                display: block;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 0;
+            }
+
+            nav ul li {
+                width: 100%;
+                text-align: center;
+            }
+
+            nav a {
+                display: block;
+                padding: 14px;
+                border-bottom: 1px solid #f0ece6;
+            }
+
+            .nav-reserve {
+                border-radius: 0;
+            }
+
+            .hero-sign {
+                padding: 28px 30px;
+            }
+
+            .hero-title {
+                font-size: 48px;
+                letter-spacing: 10px;
+                text-indent: 10px;
+            }
+
+            .hero-subtitle {
+                font-size: 12px;
+                letter-spacing: 3px;
+            }
+
+            section {
+                padding: 70px 0;
+            }
+
+            .section-title h2 {
+                font-size: 24px;
+            }
+
+            .concept-image img {
+                height: 280px;
+            }
+
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .course-box {
+                padding: 36px 24px;
+            }
+
+            .course-price {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .course-price .price-plus {
+                margin: 4px 0;
+            }
+
+            .reservation-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .info-table th,
+            .info-table td {
+                display: block;
+                width: 100%;
+            }
+
+            .info-table th {
+                padding-bottom: 4px;
+                border-bottom: none;
+            }
+
+            .info-table td {
+                padding-top: 0;
+                padding-left: 14px;
+            }
+
+            .footer-logo-text {
+                font-size: 28px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-sign {
+                padding: 22px 20px;
+                margin: 0 16px;
+            }
+
+            .hero-title {
+                font-size: 38px;
+                letter-spacing: 6px;
+                text-indent: 6px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header id="header">
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <div class="logo-deco">
+                    <div class="logo-deco-line"></div>
+                </div>
+                <div>
+                    <span class="logo-text">来入華</span>
+                    <span class="logo-sub">中華料理 &nbsp;｜&nbsp; 坂戸市</span>
+                </div>
+            </a>
+
+            <div class="mobile-controls">
+                <a href="https://www.instagram.com/fukurokujyulaika/" target="_blank" rel="noopener noreferrer" class="nav-icon" title="Instagram" id="header-instagram-mobile">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                </a>
+                <div class="menu-toggle" id="mobile-menu" role="button" aria-label="メニューを開く" tabindex="0">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+
+            <nav id="nav">
+                <ul>
+                    <li><a href="#concept">こだわり</a></li>
+                    <li><a href="#menu">メニュー</a></li>
+                    <li><a href="#course">飲み放題</a></li>
+                    <li><a href="#space">店内</a></li>
+                    <li><a href="#information">店舗情報</a></li>
+                    <li>
+                        <a href="https://www.instagram.com/fukurokujyulaika/" target="_blank" rel="noopener noreferrer" class="nav-icon desktop-insta" title="Instagram" id="header-instagram-desktop">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        </a>
+                    </li>
+                    <li><a href="tel:049-281-0164" class="nav-reserve" id="header-tel-link">予約・お問合せ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="top">
+        <div class="hero-bg slide-1"></div>
+        <div class="hero-bg slide-2"></div>
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <div class="hero-sign">
+                <div class="sign-corner tl"></div>
+                <div class="sign-corner tr"></div>
+                <div class="sign-corner bl"></div>
+                <div class="sign-corner br"></div>
+                <h1 class="hero-title">来入華</h1>
+                <p class="hero-subtitle">中華料理&nbsp;&nbsp;｜&nbsp;&nbsp;坂戸市&nbsp;&nbsp;｜&nbsp;&nbsp;坂戸駅北口 徒歩1分</p>
+            </div>
+        </div>
+
+        <div class="hero-scroll">SCROLL</div>
+    </section>
+
+    <!-- ===== POPULAR BAND ===== -->
+    <div class="popular-band" aria-hidden="true">
+        <div class="popular-band-inner">
+            <div class="popular-band-item"><div class="popular-band-dot"></div>人気メニュー&nbsp;小籠包</div>
+            <div class="popular-band-item"><div class="popular-band-dot"></div>人気メニュー&nbsp;ローストビーフ</div>
+            <div class="popular-band-item"><div class="popular-band-dot"></div>飲み放題コースあり</div>
+            <div class="popular-band-item"><div class="popular-band-dot"></div>貸し切り承ります</div>
+            <div class="popular-band-item"><div class="popular-band-dot"></div>坂戸駅北口&nbsp;徒歩1分</div>
+            <div class="popular-band-item"><div class="popular-band-dot"></div>人気メニュー&nbsp;小籠包</div>
+            <div class="popular-band-item"><div class="popular-band-dot"></div>人気メニュー&nbsp;ローストビーフ</div>
+            <div class="popular-band-item"><div class="popular-band-dot"></div>飲み放題コースあり</div>
+            <div class="popular-band-item"><div class="popular-band-dot"></div>貸し切り承ります</div>
+            <div class="popular-band-item"><div class="popular-band-dot"></div>坂戸駅北口&nbsp;徒歩1分</div>
+        </div>
+    </div>
+
+    <!-- ===== CONCEPT ===== -->
+    <section id="concept">
+        <div class="container">
+            <div class="section-title fade-up">
+                <div class="section-title-deco">
+                    <div class="deco-line"></div>
+                    <h2>こだわり</h2>
+                    <div class="deco-line right"></div>
+                </div>
+                <p class="section-en">Our Philosophy</p>
+            </div>
+
+            <div class="concept-grid">
+                <div class="concept-image fade-left">
+                    <img src="img/店内１.png" alt="来入華 店内の様子" loading="lazy">
+                </div>
+                <div class="concept-text fade-right">
+                    <h3>いつ訪れても、ほっとする「いつもの美味しさ」を</h3>
+                    <p>
+                        埼玉県坂戸市の街角で、長年にわたり地域の皆様に親しまれてきた中華料理店「来入華（らいにゅうか）」。<br>
+                        私たちが何よりも大切にしているのは、いつ足を運んでいただいても変わらない「安心の味」をお届けすることです。
+                    </p>
+                    <p>
+                        厳選した素材の旨みを活かし、一品一品に真心を込めて丁寧に仕上げる料理の数々。<br>
+                        流行にとらわれず、飾らず、誠実に。ただひたむきにお客様の「美味しい」に向き合うことこそが、私たちの誇りです。
+                    </p>
+                    <div class="concept-message">
+                        <p>いつの時代も、変わらない美味しさを</p>
+                        <p>長年地元に愛され、これからも地域に寄り添う店として</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== MENU ===== -->
+    <section id="menu">
+        <div class="container">
+            <div class="section-title fade-up">
+                <div class="section-title-deco">
+                    <div class="deco-line"></div>
+                    <h2>メニュー</h2>
+                    <div class="deco-line right"></div>
+                </div>
+                <p class="section-en">Our Menu</p>
+            </div>
+
+            <div class="menu-grid">
+                <!-- Featured -->
+                <div class="menu-item featured fade-up">
+                    <div class="menu-img-wrap">
+                        <img src="img/大人気　小籠包.png" alt="大人気 小籠包" loading="lazy">
+                        <div class="menu-badge">人気</div>
+                    </div>
+                    <div class="menu-content">
+                        <h3>小籠包</h3>
+                        <p>肉汁あふれる一品。丁寧に包まれた来入華の看板メニュー。</p>
+                    </div>
+                </div>
+
+                <div class="menu-item featured fade-up delay-100">
+                    <div class="menu-img-wrap">
+                        <img src="img/大人気　ローストビーフ.png" alt="大人気 ローストビーフ" loading="lazy">
+                        <div class="menu-badge">人気</div>
+                    </div>
+                    <div class="menu-content">
+                        <h3>ローストビーフ</h3>
+                        <p>柔らかく火を通したローストビーフ。特製ソースと共にどうぞ。</p>
+                    </div>
+                </div>
+
+                <div class="menu-item fade-up delay-200">
+                    <div class="menu-img-wrap">
+                        <img src="img/エビチリ.png" alt="エビチリ" loading="lazy">
+                    </div>
+                    <div class="menu-content">
+                        <h3>エビチリ</h3>
+                        <p>プリプリのエビと香り豊かなチリソースが絶品の一皿。</p>
+                    </div>
+                </div>
+
+                <div class="menu-item fade-up delay-100">
+                    <div class="menu-img-wrap">
+                        <img src="img/チンヂャオロース.png" alt="チンジャオロース" loading="lazy">
+                    </div>
+                    <div class="menu-content">
+                        <h3>チンジャオロース</h3>
+                        <p>シャキシャキのピーマンと牛肉を炒めた本格中華の定番。</p>
+                    </div>
+                </div>
+
+                <div class="menu-item fade-up delay-200">
+                    <div class="menu-img-wrap">
+                        <img src="img/春巻き.png" alt="春巻き" loading="lazy">
+                    </div>
+                    <div class="menu-content">
+                        <h3>春巻き</h3>
+                        <p>パリッとした食感と具材の旨みが口の中で広がります。</p>
+                    </div>
+                </div>
+
+                <div class="menu-item fade-up delay-300">
+                    <div class="menu-img-wrap">
+                        <img src="img/スープ餃子.png" alt="スープ餃子" loading="lazy">
+                    </div>
+                    <div class="menu-content">
+                        <h3>スープ餃子</h3>
+                        <p>温かいスープに浮かぶ、ほっとする優しい味わいの餃子。</p>
+                    </div>
+                </div>
+
+                <div class="menu-item fade-up">
+                    <div class="menu-img-wrap">
+                        <img src="img/タンメン.png" alt="タンメン" loading="lazy">
+                    </div>
+                    <div class="menu-content">
+                        <h3>タンメン</h3>
+                        <p>野菜たっぷりの塩ベーススープが体に染み渡る一杯。</p>
+                    </div>
+                </div>
+
+                <div class="menu-item fade-up delay-100">
+                    <div class="menu-img-wrap">
+                        <img src="img/冷やし担々麵.png" alt="冷やし担々麺" loading="lazy">
+                    </div>
+                    <div class="menu-content">
+                        <h3>冷やし担々麺</h3>
+                        <p>ごまの風味豊かな冷やし担々麺。夏の人気メニュー。</p>
+                    </div>
+                </div>
+
+                <div class="menu-item fade-up delay-200">
+                    <div class="menu-img-wrap">
+                        <img src="img/ゴマ団子.png" alt="ゴマ団子" loading="lazy">
+                    </div>
+                    <div class="menu-content">
+                        <h3>ゴマ団子</h3>
+                        <p>外はカリッ、中はもちもち。香ばしいゴマが食欲をそそる一品。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== COURSE / NOMIHOUDAI ===== -->
+    <section id="course">
+        <div class="container">
+            <div class="section-title fade-up">
+                <div class="section-title-deco">
+                    <div class="deco-line"></div>
+                    <h2>飲み放題コース</h2>
+                    <div class="deco-line right"></div>
+                </div>
+                <p class="section-en">All You Can Drink</p>
+            </div>
+
+            <div class="course-box fade-up">
+                <div class="course-corner tl"></div>
+                <div class="course-corner tr"></div>
+                <div class="course-corner bl"></div>
+                <div class="course-corner br"></div>
+
+                <div class="course-tag">人気No.1コース</div>
+                <h3 class="course-title">飲み放題コース</h3>
+                <div class="course-price">
+                    <span class="price-item">お料理 <span class="price-val">2,500</span>円</span>
+                    <span class="price-plus">＋</span>
+                    <span class="price-item">飲み放題 <span class="price-val">2,000</span>円</span>
+                </div>
+                <div class="course-divider"></div>
+                <div class="course-details">
+                    <p>注文時間 2時間</p>
+                    <p>6名〜30名まで承ります</p>
+                    <p>ご予約は前日までにお電話にて</p>
+                </div>
+                <div class="course-note">
+                    ※ビールのみ、ジョッキでも瓶でも2本まで。<br>
+                    ※宴会・貸し切りのご相談は月曜日や昼の時間帯でも承ります。詳しくはお電話にてご相談ください。
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SPACE ===== -->
+    <section id="space">
+        <div class="container">
+            <div class="section-title fade-up">
+                <div class="section-title-deco">
+                    <div class="deco-line"></div>
+                    <h2>店内・空間</h2>
+                    <div class="deco-line right"></div>
+                </div>
+                <p class="section-en">Interior & Space</p>
+            </div>
+
+            <div class="space-grid">
+                <div class="space-card fade-left">
+                    <div class="space-img">
+                        <img src="img/店内１.png" alt="来入華 店内の様子1" loading="lazy">
+                    </div>
+                    <div class="space-content">
+                        <h3>落ち着きのある店内</h3>
+                        <p>ゆったりとくつろいでいただける、温かみのある空間。お一人様からグループ様まで幅広くご利用いただけます。</p>
+                    </div>
+                </div>
+
+                <div class="space-card fade-right">
+                    <div class="space-img">
+                        <img src="img/店内２.png" alt="来入華 店内の様子2" loading="lazy">
+                    </div>
+                    <div class="space-content">
+                        <h3>貸し切り・宴会も対応</h3>
+                        <p>6名から30名様まで対応可能な貸し切りプランをご用意。記念日・歓送迎会・忘新年会など各種宴会にご利用ください。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== RESERVATION ===== -->
+    <section class="reservation-section" id="reservation">
+        <div class="container">
+            <div class="section-title fade-up">
+                <div class="section-title-deco">
+                    <div class="deco-line"></div>
+                    <h2>ご予約・お問合せ</h2>
+                    <div class="deco-line right"></div>
+                </div>
+                <p class="section-en">Reservation & Contact</p>
+            </div>
+
+            <div class="reservation-box fade-up">
+                <h2>お電話にてご予約ください</h2>
+                <p>
+                    貸し切り・宴会のご予約は前日までにお電話にてご相談ください。<br>
+                    6名〜30名まで承ります。
+                </p>
+                <div class="reservation-actions">
+                    <a href="tel:049-281-0164" class="res-btn phone-btn" id="reservation-tel-btn">
+                        <span>電話でのご予約</span>
+                        <strong>049-281-0164</strong>
+                    </a>
+                    <a href="https://www.instagram.com/fukurokujyulaika/" target="_blank" rel="noopener noreferrer" class="res-btn insta-btn" id="reservation-instagram-btn">
+                        <span>Instagram</span>
+                        <strong>@fukurokujyulaika</strong>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== INFORMATION ===== -->
+    <section id="information">
+        <div class="container">
+            <div class="section-title fade-up">
+                <div class="section-title-deco">
+                    <div class="deco-line"></div>
+                    <h2>店舗情報</h2>
+                    <div class="deco-line right"></div>
+                </div>
+                <p class="section-en">Shop Information</p>
+            </div>
+
+            <div class="info-container">
+                <div class="info-details fade-left">
+                    <table class="info-table">
+                        <tbody>
+                            <tr>
+                                <th>店舗名</th>
+                                <td>来入華</td>
+                            </tr>
+                            <tr>
+                                <th>住所</th>
+                                <td>〒350-0225<br>埼玉県坂戸市日の出町２−１２</td>
+                            </tr>
+                            <tr>
+                                <th>電話番号</th>
+                                <td><a href="tel:049-281-0164" id="info-tel-link">049-281-0164</a></td>
+                            </tr>
+                            <tr>
+                                <th>営業時間</th>
+                                <td>水〜日 &nbsp; 17:30〜22:00</td>
+                            </tr>
+                            <tr>
+                                <th>定休日</th>
+                                <td>月・火<br><span style="font-size:13px;color:#888;">※宴会の場合は月曜日や昼でも可。要相談。</span></td>
+                            </tr>
+                            <tr>
+                                <th>アクセス</th>
+                                <td>
+                                    東武東上線 坂戸駅北口より徒歩1分<br>
+                                    お車の方はお隣のパーキングをご利用ください
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>予約</th>
+                                <td>貸し切り・電話にて<br>6名〜30名 / 前日までにご相談</td>
+                            </tr>
+                            <tr>
+                                <th>SNS</th>
+                                <td>
+                                    <a href="https://www.instagram.com/fukurokujyulaika/" target="_blank" rel="noopener noreferrer" id="info-instagram-link" style="color:var(--primary-red);display:inline-flex;align-items:center;gap:6px;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                                        @fukurokujyulaika
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="info-map fade-right">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3232.0!2d139.4036!3d35.9624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60190f3e44d32e13%3A0xeaef4126368fbc95!2z5p2-5YWI6K2m!5e0!3m2!1sja!2sjp!4v1719000000001!5m2!1sja!2sjp"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="来入華の地図"
+                        id="google-map">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="container">
+            <span class="footer-logo-text">来入華</span>
+            <span class="footer-logo-sub">中華料理&nbsp;｜&nbsp;坂戸市</span>
+
+            <div class="footer-sns">
+                <a href="https://www.instagram.com/fukurokujyulaika/" target="_blank" rel="noopener noreferrer" id="footer-instagram-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    Instagram &nbsp;@fukurokujyulaika
+                </a>
+            </div>
+
+            <div class="footer-divider"></div>
+
+            <div class="footer-info">
+                <p>〒350-0225 埼玉県坂戸市日の出町２−１２</p>
+                <p>Tel: 049-281-0164</p>
+                <p>営業時間: 水〜日 17:30〜22:00 &nbsp;｜&nbsp; 定休日: 月・火</p>
+                <p>東武東上線 坂戸駅北口より徒歩1分</p>
+            </div>
+
+            <p class="copyright">&copy; 来入華 All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // ===== MOBILE MENU =====
+        const mobileMenu = document.getElementById('mobile-menu');
+        const nav = document.getElementById('nav');
+
+        mobileMenu.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
+
+        mobileMenu.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                nav.classList.toggle('active');
+            }
+        });
+
+        // Close nav on link click
+        nav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active');
+            });
+        });
+
+        // ===== SCROLL ANIMATIONS =====
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        document.querySelectorAll('.fade-up, .fade-left, .fade-right').forEach(el => {
+            observer.observe(el);
+        });
+
+        // ===== HEADER SCROLL EFFECT =====
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.style.boxShadow = '0 2px 20px rgba(196,30,43,0.12)';
+            } else {
+                header.style.boxShadow = '0 2px 15px rgba(196,30,43,0.08)';
+            }
+        });
+
+    </script>
+
+</body>
+</html>
